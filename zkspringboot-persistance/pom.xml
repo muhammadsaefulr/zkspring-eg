@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.zkspring-eg</groupId>
+        <artifactId>zkspringboot-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../zkspringboot-parent/pom.xml</relativePath>
+    </parent>
+
+    <groupId>com.zkspringboot</groupId>
+    <artifactId>zkspringboot-persistance</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>zkspringboot-persistance</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <java.target.dir>${basedir}/src/main/java</java.target.dir>
+        <mapper.target.dir>${basedir}/src/main/resources</mapper.target.dir>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgres.jdbc.driver}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>${mybatis-generator.version}</version>
+                <executions>
+
+                    <execution>
+                        <id>Generate MyBatis Artifacts for Users Module</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <configurationFile>${basedir}/src/main/resources/configGen/user/myBatisGenerator.xml
+                            </configurationFile>
+                            <overwrite>true</overwrite>
+                            <jdbcDriver>org.postgresql.Driver</jdbcDriver>
+                            <verbose>true</verbose>
+                            <includeAllDependencies>true</includeAllDependencies>
+                        </configuration>
+                    </execution>
+
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.postgresql</groupId>
+                        <artifactId>postgresql</artifactId>
+                        <version>${postgres.jdbc.driver}</version>
+                    </dependency>
+                    <!--    MyBatis-plugin Project groupId & version ??      -->
+                    <dependency>
+                        <groupId>com.zkspring-eg</groupId>
+                        <artifactId>mybatis-plugin</artifactId>
+                        <version>1.0-SNAPSHOT</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+</project>

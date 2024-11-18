@@ -1,0 +1,13 @@
+target/
+maindb/
+/.project
+.idea/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
