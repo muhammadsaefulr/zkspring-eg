@@ -42,7 +42,7 @@
         <!--suppress UnresolvedMavenProperty -->
         <jdbcURL>jdbc:postgresql://localhost:5432/springzk_app</jdbcURL>
         <jdbcUserId>saepul</jdbcUserId>
-        <jdbcPassword></jdbcPassword>
+        <jdbcPassword>epul123</jdbcPassword>
 
         <!-- ZK Framework Properties -->
         <zkoss.version>9.6.0.1</zkoss.version>

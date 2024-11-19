@@ -8,4 +8,6 @@ public interface UserAccountService {
     public int dbInsert(UsrGlobalUsers usrGlobalUsers);
 
     public int dbUpdate(UsrGlobalUsers usrGlobalUsers);
+
+    public int dbDeleteById(int userId);
 }

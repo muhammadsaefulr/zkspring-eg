@@ -13,7 +13,6 @@ public class UserAccountServiceImpl implements UserAccountService {
     @Autowired
     private UsrGlobalUsersMapper usrGlobalUsersMapper;
 
-
     @Transactional(readOnly = true)
     @Override
     public UsrGlobalUsers findUserByID(int userId) {
@@ -30,5 +29,11 @@ public class UserAccountServiceImpl implements UserAccountService {
     @Override
     public int dbUpdate(UsrGlobalUsers usrGlobalUsers) {
         return usrGlobalUsersMapper.updateByPrimaryKey(usrGlobalUsers);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public int dbDeleteById(int userId){
+        return usrGlobalUsersMapper.deleteByPrimaryKey(userId);
     }
 }
