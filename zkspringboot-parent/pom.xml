@@ -45,7 +45,8 @@
         <jdbcPassword>epul123</jdbcPassword>
 
         <!-- ZK Framework Properties -->
-        <zkoss.version>9.6.0.1</zkoss.version>
+        <zkoss.version>10.0.0-jakarta</zkoss.version>
+        <zkspringboot.version>3.2.6</zkspringboot.version>
         <zkoss.poi.version>3.9.16</zkoss.poi.version>
 
     </properties>
